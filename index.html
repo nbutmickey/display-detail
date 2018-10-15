@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章详情页面</title>
+    <script src="js/vue.min.js"></script>
+    <script type="text/javascript" src="https://appx/web-view.min.js"></script>
+    <style>
+        #app {
+            width: 100%;
+            padding: 20px;
+        }
+        .time {
+            font-size: 16px;
+            color:#191F25;
+            padding: 10px 0;
+        }
+        .content {
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ singleDetail.title }}</h1>
+        <div class="time">{{singleDetail.time}}</div>
+        <div class="content" v-html="singleDetail.content"></div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data(){
+            return {
+                singleDetail:{
+                    title:'米奇',
+                    time:'2018-07-12',
+                    content:'<h1>Hello World!</h1>'
+                },
+            }
+        },
+        created(){
+            this.getSingleNews();
+        },
+        methods:{
+            getSingleNews:function () {
+                // 网页向E应用 postMessage 消息
+                dd.postMessage({name:"获取单篇文章信息"});
+                // 接收来自E应用的消息。
+                dd.onMessage = function(e) {
+                    this.singleDetail.title = e.title;
+                    this.singleDetail.time = e.createTime;
+                    this.singleDetail.content = e.msgContent;
+                }
+            }
+        }
+    })
+</script>
+</html>
