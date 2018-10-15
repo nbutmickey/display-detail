@@ -36,7 +36,8 @@
 
         // 接收来自E应用的消息。
         dd.onMessage = function(e) {
-            console.log(e); //{'sendToWebView': '1'}
+            document.getElementsByClassName("title").innerText = e.title;
+            document.getElementsByClassName("time").innerText = e.createTime;
         }
     }())
 </script>
