@@ -13,7 +13,7 @@
             color:#191F25;
             padding: 10px 0;
         }
-        .content {
+        #content {
             padding-bottom: 10px;
         }
     </style>
@@ -22,7 +22,7 @@
     <div id="app">
         <h1 class="title"></h1>
         <div class="time"></div>
-        <div class="content"></div>
+        <div id="content"></div>
     </div>
 </body>
 <script type="text/javascript" src="https://appx/web-view.min.js"></script>
@@ -39,6 +39,7 @@
             document.getElementsByClassName("title").innerText = e.title;
             document.getElementsByClassName("time").innerText = e.createTime;
             document.getElementsByClassName("content").innerText =e;
+            document.getElementById("content").innerText ="Hello World";
         }
     }())
 </script>
