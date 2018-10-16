@@ -33,15 +33,14 @@
         }
         // 网页向E应用 postMessage 消息
         dd.postMessage({name:"测试web-view"});
-
-        // 接收来自E应用的消息。
-        dd.onMessage = function(e) {
-            document.getElementsByClassName("title").innerText = e.title;
-            document.getElementsByClassName("time").innerText = e.createTime;
-            document.getElementsByClassName("content").innerText =e;
-            document.getElementById("content").innerText ="Hello World";
-        }
     }())
+    // 接收来自E应用的消息。
+    dd.onMessage = function(e) {
+        document.getElementsByClassName("title").innerText = e.title;
+        document.getElementsByClassName("time").innerText = e.createTime;
+        document.getElementsByClassName("content").innerText =e;
+        document.getElementById("content").innerText ="Hello World";
+    }
     document.getElementById("content").innerText ="Hello World";
 </script>
 </html>
