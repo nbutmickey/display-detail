@@ -35,7 +35,7 @@
         // 接收来自E应用的消息。
         dd.onMessage = function(e) {
             dd.alert({
-                title:'test',
+                title:e,
             });
             document.getElementsByClassName("title").innerText = e.title;
             document.getElementsByClassName("time").innerText = e.createTime;
