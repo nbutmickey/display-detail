@@ -8,7 +8,7 @@
             width: 100%;
             padding: 20px;
         }
-        .time {
+        #time {
             font-size: 16px;
             color:#191F25;
             padding: 10px 0;
@@ -20,8 +20,8 @@
 </head>
 <body>
     <div id="app">
-        <h1 class="title">Hello World</h1>
-        <div class="time">我是时间区域</div>
+        <h1 id="title">Hello World</h1>
+        <div id="time">我是时间区域</div>
         <div id="content">我是内容</div>
     </div>
 </body>
@@ -34,13 +34,9 @@
         dd.postMessage({name:"测试web-view"});
         // 接收来自E应用的消息。
         dd.onMessage = function(e) {
-            dd.alert({
-                title:e.title,
-            });
-            document.getElementsByClassName("title").innerText = e.title;
-            document.getElementsByClassName("time").innerText = e.createTime;
-            document.getElementsByClassName("content").innerText =e;
-            document.getElementById("content").innerText ="Hello World";
+            document.getElementById("title").innerText = e.title;
+            document.getElementById("time").innerText = e.createTime;
+            document.getElementById("content").innerHTML =e.msgContent;
         }
 </script>
 </html>
