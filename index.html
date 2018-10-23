@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>文章详情页面</title>
     <style>
-        * {
+        *{
+            margin: 0;
+            padding: 0 ;
             box-sizing: border-box;
         }
         #app {
@@ -54,9 +56,6 @@
 </body>
 <script type="text/javascript" src="https://appx/web-view.min.js"></script>
 <script>
-        if (navigator.userAgent.toLowerCase().indexOf('dingtalk') > -1) {
-            document.writeln('<script src="https://appx/web-view.min.js"' + '>' + '<' + '/' + 'script>');
-        }
         // 网页向E应用 postMessage 消息
         dd.postMessage({name:"测试web-view"});
         // 接收来自E应用的消息。
