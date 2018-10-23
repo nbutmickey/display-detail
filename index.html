@@ -43,7 +43,7 @@
         <div id="time"></div>
         <div id="content">
             <div id="birthday" style="display: none;">
-                <img id="birthday-coverPic"  style="width: 100%;height: 400px;"/>
+                <img id="birthday-coverPic"  style="width: 100%;height: 200px;"/>
                 <p id="birthday-content"></p>
                 <div id="birthday-wish">
                     <img src="images/birthday-bg.png" style="width: 90%;height: 400px"/>
@@ -74,9 +74,10 @@
 				}
                 document.getElementById("title").innerText = e.title;
                 document.getElementById("time").innerText = e.createTime;
+                document.getElementById("birthday-content").innerText = e.abstractMsg;
                 document.getElementById("birthday-coverPic").src='http://www.ridddddde.cn/'+e.converPic;
-                // document.getElementById("birthday-avator").src=obj['head'];
-                // document.getElementById("birthday-name").innerText=obj['name'];
+                document.getElementById("birthday-avator").src=obj[head];
+                document.getElementById("birthday-name").innerText=obj[name];
             }else {
                 document.getElementById("title").innerText = e.title;
                 document.getElementById("time").innerText = e.createTime;
