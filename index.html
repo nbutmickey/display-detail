@@ -31,9 +31,7 @@
             box-shadow:0px 1px 15px #333333;
             text-align: center;
         }
-        #birthday-name {
-            font-size: 50px;
-        }
+
     </style>
 </head>
 <body>
@@ -47,7 +45,7 @@
                 <div id="birthday-wish">
                     <img src="images/birthday-bg.png" style="width: 90%;height: 400px"/>
                     <img id="birthday-avator" style="width: 100px;height: 100px;border-radius: 50%;margin: 20px 0"/>
-                    <p id="birthday-name">123</p>
+                    <p id="birthday-name">/p>
                 </div>
             </div>
         </div>
@@ -75,8 +73,8 @@
                 document.getElementById("time").innerText = e.createTime;
                 document.getElementById("birthday-content").innerText = e.abstractMsg;
                 document.getElementById("birthday-coverPic").src='http://www.ridddddde.cn/'+e.converPic;
-                document.getElementById("birthday-avator").src=obj[head];
-                document.getElementById("birthday-name").innerText=obj[0];
+                document.getElementById("birthday-avator").src=obj.head;
+                document.getElementById("birthday-name").innerText=obj.name;
             }else {
                 document.getElementById("title").innerText = e.title;
                 document.getElementById("time").innerText = e.createTime;
