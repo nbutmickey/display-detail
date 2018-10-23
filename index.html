@@ -66,7 +66,7 @@
             }else if(e.clickType === "bir"){
                 document.getElementById("birthday").style.display="block";
                 var search = e.msgContent;
-				var str = search.subString(1,search.length);
+				var str = search.substr(0,search.length);
 				var arr = str.split("&");
 				var obj = new Object();
 				for(var i = 0; i < arr.length; i++) {
