@@ -40,10 +40,11 @@
         <div id="time"></div>
         <div id="content">
             <div id="birthday">
-               
+                <img id="birthday-coverPic"  style="width: 100%;height: 400px;"/>
                 <p id="birthday-content"></p>
                 <div id="birthday-wish">
-
+                    <img src="images/birthday-bg.png" style="width: 90%;height: 400px"/>
+                    <img id="birthday-avator" style="width: 100px;height: 100px;border-radius: 50%;margin: 20px 0"/>
                     <p id="birthday-name"></p>
                 </div>
             </div>
@@ -60,29 +61,22 @@
         // 接收来自E应用的消息。
         dd.onMessage = function(e) {
             if(e.clickType === "link"){
-                document.getElementById("birthday").style.display="none";
                 window.location=e.clickUrl;
             }else if(e.clickType === "bir"){
-                // var search = e.msgContent;
-				// var str = search.subString(1,search.length);
-				// var arr = str.split("&");
-				// var obj = new Object();
-				// for(var i = 0; i < arr.length; i++) {
-                // var tmp_arr = arr[i].split("=");
-                // obj[decodeURIComponent(tmp_arr[0])] = decodeURIComponent(tmp_arr[1]);
-				// }
-                document.getElementById("birthday").style.display="block";
+                var search = e.msgContent;
+				var str = search.subString(1,search.length);
+				var arr = str.split("&");
+				var obj = new Object();
+				for(var i = 0; i < arr.length; i++) {
+                var tmp_arr = arr[i].split("=");
+                obj[decodeURIComponent(tmp_arr[0])] = decodeURIComponent(tmp_arr[1]);
+				}
                 document.getElementById("title").innerText = e.title;
                 document.getElementById("time").innerText = e.createTime;
-                document.getElementById("content").innerHTML = e.msgContent;
-                // document.getElementById("title").innerText = "米奇";
-                // document.getElementById("time").innerText = e.createTime;
-                // document.getElementById("birthday-content").innerText=e.msgContent;
-                // document.getElementById("birthday-coverPic").src='http://www.ridddddde.cn/'+e.converPic;
-                // document.getElementById("birthday-avator").src=obj[head];
-                // document.getElementById("birthday-name").innerText=e.obj[name];
+                document.getElementById("birthday-coverPic").src='http://www.ridddddde.cn/'+e.converPic;
+                document.getElementById("birthday-avator").src=obj['head'];
+                document.getElementById("birthday-name").innerText=obj['name'];
             }else {
-                document.getElementById("birthday").style.display="none";
                 document.getElementById("title").innerText = e.title;
                 document.getElementById("time").innerText = e.createTime;
                 document.getElementById("content").innerHTML = e.msgContent;
