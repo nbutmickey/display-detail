@@ -61,6 +61,7 @@
         // 接收来自E应用的消息。
         dd.onMessage = function(e) {
             if(e.clickType === "link"){
+                document.getElementById("birthday").style.display="none";
                 window.location=e.clickUrl;
             }else if(e.clickType === "bir"){
                 // var search = e.msgContent;
@@ -71,6 +72,7 @@
                 // var tmp_arr = arr[i].split("=");
                 // obj[decodeURIComponent(tmp_arr[0])] = decodeURIComponent(tmp_arr[1]);
 				// }
+                document.getElementById("birthday").style.display="block";
                 document.getElementById("title").innerText = e.title;
                 document.getElementById("time").innerText = e.createTime;
                 document.getElementById("content").innerHTML = e.msgContent;
@@ -81,6 +83,7 @@
                 // document.getElementById("birthday-avator").src=obj[head];
                 // document.getElementById("birthday-name").innerText=e.obj[name];
             }else {
+                document.getElementById("birthday").style.display="none";
                 document.getElementById("title").innerText = e.title;
                 document.getElementById("time").innerText = e.createTime;
                 document.getElementById("content").innerHTML = e.msgContent;
