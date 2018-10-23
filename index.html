@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>文章详情页面</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         #app {
             width: 100%;
             padding: 0 15px;
@@ -14,6 +17,7 @@
             padding: 10px 0;
         }
         #content {
+            width:100%;
             padding-bottom: 10px;
         }
         #birthday-content {
@@ -67,7 +71,7 @@
                 var tmp_arr = arr[i].split("=");
                 obj[decodeURIComponent(tmp_arr[0])] = decodeURIComponent(tmp_arr[1]);
 				}
-                document.getElementById("title").innerText = e.title;
+                document.getElementById("title").innerText = "米奇";
                 document.getElementById("time").innerText = e.createTime;
 				document.getElementById("birthday-content").innerText=e.abstractMsg;
                 document.getElementById("birthday-coverPic").src='http://www.ridddddde.cn/'+e.converPic;
