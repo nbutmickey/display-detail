@@ -49,6 +49,7 @@
         dd.postMessage({name:"测试web-view"});
         // 接收来自E应用的消息。
         dd.onMessage = function(em) {
+			console.log(em);
 			var e = JSON.parse(em);
             if(e.clickType === "link"){
                 window.location=e.clickUrl;
