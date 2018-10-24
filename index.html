@@ -40,6 +40,7 @@
             margin: 5px 0;
         }
     </style>
+<<<<<<< HEAD
 </head>
 <body>
     <div id="app">
@@ -60,11 +61,18 @@
 </body>
 <script type="text/javascript" src="./web-view.js"></script>
 <script>
+=======
+	<script type="text/javascript" src="https://appx/web-view.min.js"></script>
+    <script>
+     if (navigator.userAgent.toLowerCase().indexOf('dingtalk') > -1) {
+          document.writeln('<script src="https://appx/web-view.min.js"' + '>' + '<' + '/' + 'script>');
+      }
+>>>>>>> b9f9e1c91ca3e2eae3f1f41d3f2ffaaab16090bf
         // 网页向E应用 postMessage 消息
         dd.postMessage({name:"测试web-view"});
         // 接收来自E应用的消息。
         dd.onMessage = function(e) {
-            if(e.clickType === "link"){
+		    if(e.clickType === "link"){
                 window.location=e.clickUrl;
             }else if(e.clickType === "bir"){
                 document.getElementById("birthday").style.display="block";
@@ -86,7 +94,28 @@
                 document.getElementById("title").innerText = e.title;
                 document.getElementById("time").innerText = e.createTime;
                 document.getElementById("content").innerHTML = e.msgContent;
-            }
+            } 
+			
         }
-</script>
+     </script>
+</head>
+<body>
+    <div id="app">
+		
+        <h1 id="title"></h1>
+        <div id="time"></div>
+        <div id="content">
+            <div id="birthday" style="display: none;">
+                <img id="birthday-coverPic"  style="width: 100%;height: 200px;"/>
+                <p id="birthday-content"></p>
+                <div id="birthday-wish">
+                    <img src="images/birthday-bg.png" style="width: 90%;height: 200px"/>
+                    <img id="birthday-avator" style="width: 100px;height: 100px;border-radius: 50%;"/>
+                    <p id="birthday-name"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
