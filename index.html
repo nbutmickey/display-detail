@@ -13,8 +13,12 @@
             width: 100%;
             padding: 0 15px 50px 15px
         }
+		#title {
+			margin-top:20px;
+			font-size:25px;
+		}
         #time {
-            font-size: 16px;
+            font-size: 18px;
             color:#191F25;
             padding: 10px 0;
         }
@@ -36,7 +40,7 @@
         #birthday-name {
             color: #191F25;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 20px;
             margin: 5px 0;
         }
     </style>
@@ -46,7 +50,6 @@
         dd.postMessage({name:"测试web-view"});
         // 接收来自E应用的消息。
         dd.onMessage = function(e) {
-			alert(e.abstractMsg);
 		    if(e.clickType === "link"){
                 window.location=e.clickUrl;
             }else if(e.clickType === "bir"){
@@ -62,7 +65,7 @@
                 document.getElementById("title").innerText = e.title;
                 document.getElementById("time").innerText = e.createTime;
                 document.getElementById("birthday-content").innerText = e.abstractMsg;
-                document.getElementById("birthday-coverPic").src='http://www.ridddddde.cn/'+e.converPic;
+                document.getElementById("birthday-coverPic").src='http://www.hfmes.com/'+e.converPic;
                 document.getElementById("birthday-avator").src=obj.head;
                 document.getElementById("birthday-name").innerText=obj.name;
             }else {
@@ -76,15 +79,14 @@
 </head>
 <body>
     <div id="app">
-		
         <h1 id="title"></h1>
         <div id="time"></div>
         <div id="content">
             <div id="birthday" style="display: none;">
-                <img id="birthday-coverPic"  style="width: 100%;height: 200px;"/>
+                <img id="birthday-coverPic"  style="width: 100%;height: 300px;"/>
                 <p id="birthday-content"></p>
                 <div id="birthday-wish">
-                    <img src="images/birthday-bg.png" style="width: 90%;height: 200px"/>
+                    <img src="images/birthday-bg.png" style="width: 90%;height: 300px"/>
                     <img id="birthday-avator" style="width: 100px;height: 100px;border-radius: 50%;"/>
                     <p id="birthday-name"></p>
                 </div>
