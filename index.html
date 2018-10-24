@@ -52,7 +52,9 @@
         // 接收来自E应用的消息。
         dd.onMessage = function(e) {
 		    if(e.clickType === "link"){
-			    alert(e.clickUrl);
+			    dd.alert({
+				content:"link"
+				})
                 window.location=e.clickUrl;
             }else if(e.clickType === "bir"){
                 document.getElementById("birthday").style.display="block";
